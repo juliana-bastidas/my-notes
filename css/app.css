@@ -60,6 +60,7 @@ textarea {
     align-items: center;
     display: flex;
     text-align: right;
+    justify-content: end;
     
 }
 .btn-delete {
@@ -71,5 +72,4 @@ textarea {
     font-size: 18px;
     font-weight: 700;
     color: #4F4F4F;
-    float: right;
   }

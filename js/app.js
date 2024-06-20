@@ -64,28 +64,4 @@ function saveNotes() {
  localStorage.setItem("notes", JSON.stringify(notes));
 }
 
-/*function renderNotes () {
-  containerCards.innerHTML = ""; //limpiar el contenido previo
-  notes.forEach(note => {
-    //El HTML para cada nota 
-    containerCards.innerHTML += `
-    <div class="card">
-        <p>${note.tittle}</p>
-        <div class="container-btn">
-            <button id="btn-delete" onclick="deleteNote(${note.id})">Borrar</button>
-        </div>
-      </div> `;
-  });
-}*/
 
-
-/*function createNote() {
-  const title = document.getElementById("note").value;
-  containerCards.innerHTML += `
-    <div class="card">
-        <p>${title}</p>
-        <div class="container-btn">
-            <button id="btn-delete">Borrar</button>
-        </div>
-      </div> `;
-} */
