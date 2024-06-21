@@ -38,12 +38,12 @@ function renderNotes() {
   containerCards.innerHTML = ""; // Limpiamos el contenido previo
 
   // Iteramos sobre las notas y creamos el HTML para cada una
-  notes.forEach((note, index) => {
+  notes.forEach((note) => {
     const noteHtml = `
       <div class="card">
         <p>${note.tittle}</p>
         <div class="container-btn">
-          <button id="btn-delete-${index}" onclick="deleteNote(${note.id})">Borrar</button>
+          <button id="btn-delete" onclick="deleteNote(${note.id})">Borrar</button>
         </div>
       </div>
     `;
@@ -54,7 +54,7 @@ function renderNotes() {
   const cards = document.querySelectorAll('.card');
   cards.forEach((card, index) => {
     if (index > 0) {
-      card.style.marginTop = '32px'; // Ajusta el valor de margin-top según lo necesites
+      card.style.marginTop = '16px'; // Ajusta el valor de margin-top según lo necesites
     }
   });
 }
