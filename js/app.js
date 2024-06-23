@@ -14,22 +14,20 @@ const btnCreateNote = document.getElementById("btn-create");
 btnCreateNote.addEventListener("click", createNote);
 
 function createNote() {
-  const tittle = document.getElementById("note").value;
-  if (tittle.trim()==="") {
+  const title = document.getElementById("note").value;
+  if (title.trim() === "") {
     alert("La nota no puede estar vacia");
     return;
   }
   const noteId = Date.now();
-  notes.push({ id: noteId, tittle });
+  notes.push({ id: noteId, title: title});
   renderNotes();
   saveNotes(); // Guardar las notas en localStorage
   document.getElementById("note").value = ""; //limpiar input
-  
-
 }
 
 function deleteNote(noteId) {
-  notes = notes.filter(note => note.id !== noteId);
+  notes = notes.filter((note) => note.id !== noteId);
   renderNotes();
   saveNotes(); // Guardar las notas en localStorage
 }
@@ -41,27 +39,18 @@ function renderNotes() {
   notes.forEach((note) => {
     const noteHtml = `
       <div class="card">
-        <p>${note.tittle}</p>
+        <p>${note.title}</p>
         <div class="container-btn">
           <button id="btn-delete" onclick="deleteNote(${note.id})">Borrar</button>
         </div>
       </div>
     `;
-    containerCards.innerHTML += noteHtml; // Agregamos la nota al contenedor
-  });
-
-  // Agregar estilo para espacio entre notas
-  const cards = document.querySelectorAll('.card');
-  cards.forEach((card, index) => {
-    if (index > 0) {
-      card.style.marginTop = '16px'; // Ajusta el valor de margin-top según lo necesites
-    }
+    containerCards.innerHTML += noteHtml;  // Agregamos la nota al contenedor
+    //containerCards.innerHTML = containerCards.innerHTML + noteHtml; 
   });
 }
 
 // Función para guardar notas en localStorage
 function saveNotes() {
- localStorage.setItem("notes", JSON.stringify(notes));
+  localStorage.setItem("notes", JSON.stringify(notes));
 }
-
-

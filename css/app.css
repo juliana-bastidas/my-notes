@@ -1,7 +1,7 @@
 * {
   font-family: Roboto;
   padding: 0;
-  margin: 0 ;
+  margin: 0;
   border: 0;
 }
 
@@ -18,7 +18,6 @@
   flex-direction: column;
   gap: 8px;
 }
-
 
 h3 {
   font-size: 32px;
@@ -49,34 +48,38 @@ textarea {
   font-weight: 700;
   text-align: center;
   color: #ffffff;
-  margin: 0; 
+  margin: 0;
 }
 
-.card{
-    padding: 16px;
-    gap: 16px;
-    border-radius: 16px;
-    border: 2px #4f4f4f solid;
-    font-size: 24px;
-    font-weight: 400;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
+.card {
+  padding: 16px;
+  gap: 16px;
+  border-radius: 16px;
+  border: 2px #4f4f4f solid;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
 }
-.container-btn{
-    align-items: center;
-    display: flex;
-    text-align: right;
-    justify-content: end;
-    
+.container-btn {
+  align-items: center;
+  display: flex;
+  text-align: right;
+  justify-content: end;
 }
 #btn-delete {
-    width: 83px;
-    padding: 4px 16px 4px 16px;
-    gap: 8px;
-    border-radius: 16px;
-    background-color: #E0E0E0;   
-    font-size: 18px;
-    font-weight: 700;
-  }
+  width: 83px;
+  padding: 4px 16px 4px 16px;
+  gap: 8px;
+  border-radius: 16px;
+  background-color: #e0e0e0;
+  font-size: 18px;
+  font-weight: 700;
+}
 
+#container-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
