@@ -34,6 +34,15 @@ function deleteNote(noteId) {
   renderNotes();
   saveNotes(); // Guardar las notas en localStorage
 }
+
+function editNote (noteId) {
+  const newtitle = prompt("Escribe el nuevo titulo de la nota"); 
+  const note = notes.find((note) => note.id === noteId);
+  note.title = newtitle;
+  renderNotes()
+  saveNotes();
+}
+
 // Función para mostrar las notas 
 function renderNotes() {
   containerCards.innerHTML = ""; // Limpiamos el contenido previo
@@ -45,6 +54,7 @@ function renderNotes() {
         <p>${note.title}</p>
         <div class="container-btn">
           <button id="btn-delete" onclick="deleteNote(${note.id})">Borrar</button>
+          <button id="btn-edit" onclick ="editNote(${note.id})" = >Editar</button>
         </div>
       </div>
     `;

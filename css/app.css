@@ -78,6 +78,16 @@ textarea {
   font-weight: 700;
 }
 
+#btn-edit {
+  width: 83px;
+  padding: 4px 16px 4px 16px;
+  gap: 8px;
+  border-radius: 16px;
+  background-color: #e0e0e0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
 #container-cards {
   display: flex;
   flex-direction: column;
