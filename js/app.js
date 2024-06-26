@@ -1,3 +1,4 @@
+//Crear un arreglo vacio para guardar las notas
 let notes = [];
 
 // Recuperar notas de localStorage al cargar la página
@@ -9,29 +10,31 @@ document.addEventListener("DOMContentLoaded", () => {
   renderNotes();
 });
 
+// referencia a los elementos del HTML
 const containerCards = document.getElementById("container-cards");
 const btnCreateNote = document.getElementById("btn-create");
 btnCreateNote.addEventListener("click", createNote);
 
+// Función para crear una nota
 function createNote() {
-  const title = document.getElementById("note").value;
+  const title = document.getElementById("note").value; //valor del input con id note
   if (title.trim() === "") {
     alert("La nota no puede estar vacia");
     return;
   }
-  const noteId = Date.now();
+  const noteId = Date.now(); // Generar un id único para la nota1
   notes.push({ id: noteId, title: title});
   renderNotes();
   saveNotes(); // Guardar las notas en localStorage
   document.getElementById("note").value = ""; //limpiar input
 }
-
+// Función para borrar una nota
 function deleteNote(noteId) {
   notes = notes.filter((note) => note.id !== noteId);
   renderNotes();
   saveNotes(); // Guardar las notas en localStorage
 }
-
+// Función para renderizar las notas en el HTML
 function renderNotes() {
   containerCards.innerHTML = ""; // Limpiamos el contenido previo
 
@@ -49,7 +52,6 @@ function renderNotes() {
     //containerCards.innerHTML = containerCards.innerHTML + noteHtml; 
   });
 }
-
 // Función para guardar notas en localStorage
 function saveNotes() {
   localStorage.setItem("notes", JSON.stringify(notes));
