@@ -34,7 +34,7 @@ function deleteNote(noteId) {
   renderNotes();
   saveNotes(); // Guardar las notas en localStorage
 }
-// Función para renderizar las notas en el HTML
+// Función para mostrar las notas 
 function renderNotes() {
   containerCards.innerHTML = ""; // Limpiamos el contenido previo
 
